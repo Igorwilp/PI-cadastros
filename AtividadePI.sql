@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS AtividadePI;
+CREATE DATABASE AtividadePI;
+USE AtividadePI;
