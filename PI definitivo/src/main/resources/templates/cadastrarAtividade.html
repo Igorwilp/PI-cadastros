@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 th:if="${atividade.id}">Alteração de Atividade</h1>
+        <h1 th:unless="${atividade.id}">Cadastro de Atividade</h1>
+        
+        <form th:action="@{/gravar}" method="POST" th:object="${atividade}">
+            <p>Titulo <input type="text" th:field="${atividade.titulo}"></p>
+            <p>Atividade <input type="text" th:field="${atividade.atividadeNome}"></p>
+            <p>Materia <input type="text" th:field="${atividade.materia}"></p>
+            <p>Prazo <input type="int" th:field="${atividade.prazo}"></p>
+            <input type="hidden" th:field="${atividade.id}">
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+        
+        <a th:href="@{/}">Retornar</a>
+    </body>
+</html>
+
